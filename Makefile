@@ -41,6 +41,8 @@ ${NAME}:	${SRCS}
 			./a.out
 clean:
 			make clean -C ./${LIBFT_PATH}
+			rm -rf ${LIBFT}
+			rm -rf a.out
 			${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean

@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 20:39:39 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/12 22:30:14 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/14 02:26:56 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,28 +105,28 @@ void	min_field_flag(void)
 	printf("\t'%06d'\n", nbr);
 	printf("\t'%10d'\n", nbr);
 	printf("\t'%010d'\n", nbr);
-	/* 0 flag pattern is: <zero number> <bytes number> <specifier> */
+	/*	0 flag pattern is: <zero number> <bytes number> <specifier> */
 }
 
 void	precision_flag(void)
 {
 	puts("\n\e[42m\e[1;37m Precision flag \033[0m");
 
-	/* If applied to float, the flag says how many 
+	/*	If applied to float, the flag says how many 
 			decimal digits is to be printed */
 	printf("\t%.4f\n", 123.1234567);
 
-	/* If applied to integer types, it says how 
-		the mininum and maxinum digits of the number.
+	/*	If applied to integer types, it says how 
+			the mininum and maxinum digits of the number.
 		If number is lower, then zeros are added to
-		complete it.*/
+			complete it.*/
 	printf("\t%2.8d\n", 1000);
 
-	/* If applied to strings, the flag shows the mininum
-		and maximum length of the given string.
+	/*	If applied to strings, the flag shows the mininum
+			and maximum length of the given string.
 		If string is bigger than max, then string is truncated.
 		If string is lower than min or max, then it's written
-		from left to right.*/
+			from left to right.*/
 	printf("\t'%19.15s'\n", "Esse é um teste simples.");
 
 	printf("\t'%10.15s'\n", "Esse é um teste simples.");
@@ -149,10 +149,10 @@ void	hashtag_flag(void)
 			'0x' or '0X' respectively before hex number. 
 			The flag can't be used with other specifiers.*/
 	puts("\n\e[42m\e[1;37m Hashtag flag \033[0m");
-	printf("\tPrints 42 in #low hexadecimal: %#x\n", nbr);
-	printf("\tPrints 42 in #up hexadecimal: %#X\n", nbr);
-	printf("\tPrints 42 in low hexadecimal: %x\n", nbr);
-	printf("\tPrints 42 in up hexadecimal: %X\n", nbr);
+	printf("\tPrints -21 in #low hexadecimal: %#x\n", nbr);
+	printf("\tPrints -21 in #up hexadecimal: %#X\n", nbr);
+	printf("\tPrints -21 in low hexadecimal: %x\n", nbr);
+	printf("\tPrints -21 in up hexadecimal: %X\n", nbr);
 	printf("\t'%%x | %%#x --> %x | %#x'\n", 10, 10);
 }
 
@@ -174,8 +174,8 @@ void	plus_sign_flag(void)
 
 void	asterisk_flag(void)
 {
-/* The min field length and precision specifiers can be
-		arguments of printf() when used with '*'. Ex: */
+	/* The min field length and precision specifiers can be
+			arguments of printf() when used with '*'. Ex: */
 	puts("\n\e[42m\e[1;37m Asterisk flag \033[0m");
 	printf("\t'%*.*d'\n", 10, 4, 123);
 	printf("\t'%*.*f'\n", 10, 4, 1234.12345);
