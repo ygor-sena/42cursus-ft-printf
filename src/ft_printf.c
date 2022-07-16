@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 23:08:19 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 22:53:52 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/16 03:43:40 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ static int	ft_vfprintf(va_list arg, const char *format)
 		}
 		else
 		{
-			input->size += write(1, &input->format[input->index], 1);	
+			input->size += write(1, &input->format[input->index], 1);
 			input->index++;
 		}
 	}
 	length = input->size;
-	free(input);
+	ft_free((void **) &input, NULL);
 	return (length);
 }

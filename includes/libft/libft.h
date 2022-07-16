@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 19:55:58 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 23:25:10 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/16 16:36:09 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 /* <string.h> functions: */
-/* Memory: */
+/* MEMORY MANIPULATION FUNCTIONS: */
 /**
  * @brief The ft_memcmp() function compares the first n bytes (each
  * interpreted as unsigned char) of the memory areas s1 and s2.
@@ -167,7 +167,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
  */
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
-/* Strings: */
+/* STRING FUNCTIONS: */
 /**
  * @brief The ft_strlen() function calculates the length of the string pointed
  * to by s, excluding the terminating null byte ('\0').
@@ -229,7 +229,7 @@ char	*ft_strrchr(const char *s, int c);
  */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-/* BSD (<bsd/string.h>): */
+/* BSD FUNCTIONS (<bsd/string.h>): */
 /**
  * @brief The ft_strlcpy() function copies up to size - 1 characters from the
  * NUL-terminated string src to dst, NUL-terminating the result.
@@ -272,7 +272,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
  */
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-/* <stdlib.h> functions: */
+/* <stdlib.h> FUNCTIONS: */
 /**
  * @brief The ft_atoi() function converts the initial portion of the string
  * pointed to by nptr to int.
@@ -313,7 +313,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
  */
 void	ft_bzero(void *s, size_t n);
 
-/* New functions: */
+/* NON STANDARD FUNCTIONS: */
 /**
  * @brief The ft_substr() function allocates (with malloc(3)) and returns a
  * substringfrom the string ’s’. The substring begins at index ’start’ and is
@@ -434,7 +434,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /*
-* Bonus functions:
+* BONUS FUNCTIONS:
  */
 /**
  * @brief The ft_lstnew() function allocates (with malloc(3)) and returns a
@@ -530,7 +530,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* 
-* Addional functions:
+* ADDITIONAL FUNCIONS:
  */
 /**
  * @brief The ft_freethis() function simply free a malloc'd pointer and points
@@ -539,7 +539,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  * @param str The address of the pointer to be free'd.
  * @param content The target to point str to.
  */
-void	ft_freethis(char **str, void *content);
+void	ft_free(void **str, void *content);
 
+/**
+ * @brief The utoa_base converts an unsigned number to string in
+ * any given base passed at second parameter.
+ * 
+ * @param nbr The unsigned number to be converted to string.
+ * @param base A char* set that contains the system notation.
+ * Ex: "0123456789" set is base 10 notation and "0123456789ABCDEF"
+ * is base 16 notation.
+ *
+ * @return (char *) Returns the converted number. If not, the function 
+ * returns NULL if the allocation fails or if base content is NULL.
+ */
 char	*ft_utoa_base(unsigned long nbr, char *base);
 #endif

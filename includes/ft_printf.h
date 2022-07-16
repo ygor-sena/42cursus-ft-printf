@@ -6,23 +6,24 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 23:56:19 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 22:51:53 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/16 16:37:12 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#define DECIMAL_BASE "0123456789"
-#define UP_HEX_BASE "0123456789ABCDEF"
-#define LOW_HEX_BASE "0123456789abcdef" 
-#define PTR_PREFIX "0x"
+# define DECIMAL_BASE "0123456789"
+# define UP_HEX_BASE "0123456789ABCDEF"
+# define LOW_HEX_BASE "0123456789abcdef" 
+# define PTR_PREFIX "0x"
+# define NULL_PTR "(nil)"
+# define NULL_STR "(null)"
 
 # include "libft/libft.h"
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef enum e_bool
 {
@@ -52,8 +53,10 @@ int			ft_printf(const char *format, ...);
 
 t_format	*ft_instance_format(va_list arg, const char *format);
 t_flag		*ft_instance_flag(void);
+
 void		ft_sort_format(t_format *input);
 void		ft_type_cast(t_format *input);
+
 void		ft_cast_char(t_format *input, size_t *index);
 void		ft_cast_percent(t_format *input, size_t *index);
 void		ft_cast_string(t_format *input, size_t *index);

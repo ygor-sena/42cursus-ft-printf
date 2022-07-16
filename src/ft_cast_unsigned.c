@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:45 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 23:01:26 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/16 03:43:05 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_cast_unsigned(t_format *input, size_t *index)
 	ft_putstr_fd(str_nbr, 1);
 	input->size += ft_strlen(str_nbr);
 	*index += 2;
-	free(str_nbr);
+	ft_free((void **) &str_nbr, NULL);
 }

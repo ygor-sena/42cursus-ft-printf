@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:42 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 22:54:48 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/16 02:48:44 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_cast_string(t_format *input, size_t *index)
 
 	str = va_arg(input->arg, char *);
 	if (!str)
-		str = "(null)";
+		str = NULL_STR;
 	ft_putstr_fd(str, 1);
 	input->size += ft_strlen(str);
 	*index += 2;

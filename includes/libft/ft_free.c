@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freethis.c                                      :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ccamargo <ccamargo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 16:14:56 by ccamargo          #+#    #+#             */
-/*   Updated: 2022/05/30 16:39:20 by ccamargo         ###   ########.fr       */
+/*   Updated: 2022/07/16 03:32:18 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freethis(char **str, void *content)
+void	ft_free(void **str, void *content)
 {
 	if (*str)
 	{
 		free(*str);
-		*str = (char *) content;
+		*str = content;
 	}
 }
