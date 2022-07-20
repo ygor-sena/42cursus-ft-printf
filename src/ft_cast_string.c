@@ -6,20 +6,18 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:42 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/16 02:48:44 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/20 21:47:23 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_cast_string(t_format *input, size_t *index)
+void	ft_cast_string(t_format *input)
 {
 	char	*str;
 
 	str = va_arg(input->arg, char *);
 	if (!str)
 		str = NULL_STR;
-	ft_putstr_fd(str, 1);
-	input->size += ft_strlen(str);
-	*index += 2;
+	input->size += write(1, str, ft_strlen(str));
 }

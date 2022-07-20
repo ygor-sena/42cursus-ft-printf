@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 00:19:52 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/15 16:49:19 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/20 22:52:03 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,33 @@ t_format	*ft_instance_format(va_list arg, const char *format)
 	return (input);
 }
 
-t_flag	*ft_instance_flag(void)
+t_flag	ft_instance_flag(void)
 {
-	t_flag	*specs;
+	t_flag	flag;
 
-	specs = malloc(sizeof(t_flag));
-	if (!specs)
-		return (NULL);
-	specs->padding = FALSE;
-	specs->precision = FALSE;
-	specs->left_just = FALSE;
-	specs->hashtag = FALSE;
-	specs->sign = FALSE;
-	specs->space = FALSE;
-	return (specs);
+	flag.padding = FALSE;
+	flag.field = 0;
+	flag.precision = FALSE;
+	flag.length = 0;
+	flag.left_just = FALSE;
+	flag.hashtag = FALSE;
+	flag.sign = FALSE;
+	flag.padding = FALSE;
+	flag.spec = ' ';
+	flag.error = FALSE;
+	return (flag);
+}
+
+void	ft_reset_flag(t_flag *flag)
+{
+	flag->padding = FALSE;
+	flag->field = 0;
+	flag->precision = FALSE;
+	flag->length = 0;
+	flag->left_just = FALSE;
+	flag->hashtag = FALSE;
+	flag->sign = FALSE;
+	flag->padding = FALSE;
+	flag->spec = ' ';
+	flag->error = FALSE;
 }
