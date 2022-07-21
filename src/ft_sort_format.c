@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 01:27:59 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/21 21:23:50 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 01:06:06 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static void	ft_check_parse(t_flag flag);
 
-/* Analyse bonus flags combinations
-			and then type cast with specifier */
 void	ft_sort_format(t_format *input, t_flag flag)
 {
 	input->index++;
@@ -40,9 +38,9 @@ static void	ft_check_parse(t_flag flag)
 	if (flag.hashtag == TRUE)
 	{
 		if ((flag.spec != 'x' || flag.spec != 'X')
-			|| (flag.sign == TRUE || flag.space == TRUE))
+			|| (flag.sign || flag.space))
 		flag.error = TRUE;
 	}
-	if (flag.sign == TRUE && flag.space == TRUE)
+	if (flag.sign && flag.space)
 		flag.space = FALSE;
 }
