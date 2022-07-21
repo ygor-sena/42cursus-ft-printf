@@ -6,13 +6,13 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 19:43:50 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/20 23:00:40 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 00:17:06 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_type_cast(t_format *input, t_flag *flag)
+void	ft_type_cast(t_format *input, t_flag flag)
 {
 	if (input->format[input->index] == 'c')
 		ft_cast_char(input);
@@ -29,5 +29,5 @@ void	ft_type_cast(t_format *input, t_flag *flag)
 		ft_cast_integer(input, flag);
 	else if (input->format[input->index] == 'x'
 		|| input->format[input->index] == 'X')
-		ft_cast_hexa(input);
+		ft_cast_hexa(input, flag);
 }

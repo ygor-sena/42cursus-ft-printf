@@ -6,13 +6,13 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:30 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/20 21:48:13 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/21 21:24:14 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_cast_hexa(t_format *input)
+void	ft_cast_hexa(t_format *input, t_flag flag)
 {
 	unsigned int	nbr;
 	char			*str_nbr;
@@ -22,6 +22,7 @@ void	ft_cast_hexa(t_format *input)
 		str_nbr = ft_utoa_base(nbr, LOW_HEX_BASE);
 	else
 		str_nbr = ft_utoa_base(nbr, UP_HEX_BASE);
+	ft_parse_hexa(input, flag, str_nbr);
 	input->size += write(1, str_nbr, ft_strlen(str_nbr));
 	ft_free((void **) &str_nbr, NULL);
 }

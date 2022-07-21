@@ -3,6 +3,7 @@ SRCS_PATH		=	src/
 SRCS_FILES		= 	ft_printf.c \
 					ft_instance.c \
 					ft_sort_format.c \
+					ft_parse.c \
 					ft_type_cast.c \
 					ft_cast_char.c \
 					ft_cast_percent.c \
@@ -10,7 +11,7 @@ SRCS_FILES		= 	ft_printf.c \
 					ft_cast_pointer.c \
 					ft_cast_unsigned.c \
 					ft_cast_integer.c \
-					ft_cast_hexa.c
+					ft_cast_hexa.c 
 
 INCS_PATH		=	includes/
 
@@ -36,9 +37,19 @@ ${NAME}:	${SRCS}
 			cp $(LIBFT) $(NAME)
 			${CC} ${CC_FLAGS} -c $(SRCS) -I ./includes/
 			mv *.o ./src/
-			ar -rc $(NAME) $(OBJS)
+			ar -rcs $(NAME) $(OBJS)
 			gcc main.c -I ./includes/ -L ./ -lftprintf
 			./a.out
+
+bonus:		${SRCS}
+			make -C ./${LIBFT_PATH}
+			cp $(LIBFT) $(NAME)
+			${CC} ${CC_FLAGS} -c $(SRCS) -I ./includes/
+			mv *.o ./src/
+			ar -rcs $(NAME) $(OBJS)
+			gcc main.c -I ./includes/ -L ./ -lftprintf
+			./a.out
+
 clean:
 			make clean -C ./${LIBFT_PATH}
 			rm -rf ${LIBFT}

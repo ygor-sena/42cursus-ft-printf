@@ -6,23 +6,20 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 00:19:52 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/20 22:52:03 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 00:17:31 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-t_format	*ft_instance_format(va_list arg, const char *format)
+t_format	ft_instance_format(va_list arg, const char *format)
 {
-	t_format	*input;
+	t_format	input;
 
-	input = malloc(sizeof(t_format));
-	if (!input)
-		return (NULL);
-	va_copy(input->arg, arg);
-	input->format = format;
-	input->size = 0;
-	input->index = 0;
+	va_copy(input.arg, arg);
+	input.format = format;
+	input.size = 0;
+	input.index = 0;
 	return (input);
 }
 
@@ -37,7 +34,7 @@ t_flag	ft_instance_flag(void)
 	flag.left_just = FALSE;
 	flag.hashtag = FALSE;
 	flag.sign = FALSE;
-	flag.padding = FALSE;
+	flag.space = FALSE;
 	flag.spec = ' ';
 	flag.error = FALSE;
 	return (flag);
