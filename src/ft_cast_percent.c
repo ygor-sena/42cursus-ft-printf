@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:37 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/21 21:24:28 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 01:42:00 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_cast_percent(t_format *input)
 {
-	ft_putchar_fd('%', 1);
-	input->size += 1;
+	input->size += write (1, PERCENT_SIGN, 1);
 }

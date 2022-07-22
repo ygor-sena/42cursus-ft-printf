@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 23:08:19 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/22 00:17:48 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 01:59:50 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,14 @@ int	ft_printf(const char *format, ...)
 static int	ft_vfprintf(va_list arg, const char *format)
 {
 	t_format	input;
-	t_flag		flag;
 	size_t		length;
 
 	input = ft_instance_format(arg, format);
-	flag = ft_instance_flag();
 	length = 0;
 	while (input.format[input.index])
 	{
 		if (input.format[input.index] == '%')
-			ft_sort_format(&input, flag);
+			ft_sort_format(&input);
 		else
 			input.size += write(1, &input.format[input.index], 1);
 		input.index++;

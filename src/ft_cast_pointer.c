@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:39 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/21 21:24:33 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:44:21 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	ft_cast_pointer(t_format *input)
 		input->size += write(1, LOW_HEX_PREFIX, ft_strlen(LOW_HEX_PREFIX));
 		input->size += write(1, str_nbr, ft_strlen(str_nbr));
 	}
-	ft_free((void **) &str_nbr, NULL);
+	free(str_nbr);
 }

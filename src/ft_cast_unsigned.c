@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 00:31:45 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/21 21:24:44 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/22 15:44:28 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_cast_unsigned(t_format *input)
 	nbr = va_arg(input->arg, unsigned int);
 	str_nbr = ft_utoa_base(nbr, DECIMAL_BASE);
 	input->size += write(1, str_nbr, ft_strlen(str_nbr));
-	ft_free((void **) &str_nbr, NULL);
+	free(str_nbr);
 }
