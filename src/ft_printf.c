@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 23:08:19 by yde-goes          #+#    #+#             */
-/*   Updated: 2022/07/22 01:59:50 by yde-goes         ###   ########.fr       */
+/*   Updated: 2022/07/25 01:05:29 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ static int	ft_vfprintf(va_list arg, const char *format)
 	t_format	input;
 	size_t		length;
 
+	ft_instance_printer();
 	input = ft_instance_format(arg, format);
 	length = 0;
 	while (input.format[input.index])
