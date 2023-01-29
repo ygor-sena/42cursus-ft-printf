@@ -57,21 +57,23 @@ Inside the folder [`ft-printf-studies`](https://github.com/ygor-sena/42cursus-ft
 
 ## How to use the project
 
-To use the `ft_printf()` in your project it's necessary to include the library `libftprintf.a` and the header as follows:
+Run `make` or `make bonus` if you compile the mandatory project or the bonus project respectively.
 
-```
+After that, to use the `ft_printf()` in your project it's necessary to include the library `libftprintf.a` and the header as follows:
+
+```c
 #include "ft_printf.h" 
 ```
 
 If you want to include the bonus version, use:
 
-```
+```c
 #include "ft_printf_bonus.h" 
 ```
 
 Don't forget to add the following flags when compiling your project:
 
-```
+```bash
 gcc ... -lftprintf -L path/to/libftprintf.a -I path/to/libftprintf.h
 ```
 
