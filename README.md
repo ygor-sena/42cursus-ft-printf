@@ -57,7 +57,7 @@ Inside the folder [`ft-printf-studies`](https://github.com/ygor-sena/42cursus-ft
 
 ## How to use the project
 
-Run `make` or `make bonus` if you compile the mandatory project or the bonus project respectively.
+Run `make` or `make bonus` if you want to compile the mandatory project or the bonus project respectively.
 
 After that, to use the `ft_printf()` in your project it's necessary to include the library `libftprintf.a` and the header as follows:
 
@@ -84,4 +84,4 @@ gcc ... -lftprintf -L path/to/libftprintf.a -I path/to/libftprintf.h
 - [Formatted output](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output.html) in _12. Input/Output on Streams_ by [The GNU C Library Reference Manual](https://www.gnu.org/software/libc/manual/2.36/html_mono/libc.html).
 - COLTON, Don. [Secrets of “printf”](https://www.studocu.com/en-us/document/florida-institute-of-technology/ae-comp-techniques/secrets-of-printf/3918181). Brigham Young University Hawaii, 2014.
 - [C++ Documentation of printf()](https://cplusplus.com/reference/cstdio/printf/) by [cplusplus.com](https://cplusplus.com/reference/).
-- [ft_printf_tester](https://github.com/paulo-santana/ft_printf_tester.git) by [Paulo Santana](https://github.com/paulo-santana).
+- To test the project features, I used the [ft_printf_tester](https://github.com/paulo-santana/ft_printf_tester.git) made by [Paulo Santana](https://github.com/paulo-santana).
