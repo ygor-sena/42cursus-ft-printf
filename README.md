@@ -10,13 +10,13 @@
 </p>
 
 
-## Introduction
+## 📣 Introduction
 
 This project is pretty straightforward. It asks students to recode `printf()` in order to make them learn about how a **variadic function** works. It also aims to make students think about how they are going to implement the project. After all, the key to a successful `ft_printf` is a well-structured and extensible code.
 
 Inside the folder [`ft-printf-studies`](https://github.com/ygor-sena/42cursus-ft-printf/blob/main/ft-printf-studies/ft_printf_studies.c) there is a file that test all the possible combinations of `printf` flags.
 
-## Implemented features
+## ✨ Implemented features
 
 #### Mandatory
 
@@ -55,7 +55,7 @@ Inside the folder [`ft-printf-studies`](https://github.com/ygor-sena/42cursus-ft
 | `+`  | Adds a plus sign (`+`) in the front of positive numeric conversions. |
 
 
-## How to use the project
+## ⚒️ How to use the project
 
 Run `make` or `make bonus` if you want to compile the mandatory project or the bonus project respectively.
 
@@ -77,7 +77,7 @@ Don't forget to add the following flags when compiling your project:
 gcc ... -lftprintf -L path/to/libftprintf.a -I path/to/libftprintf.h
 ```
 
-## References
+## 📖 References
 
 - [Criando Funções Com Número Variável De Argumentos Em C](https://daemoniolabs.wordpress.com/tag/como-utilizar-va_start-va_arg-va_end-e-va_list/) by [Daemonio Labs](https://daemoniolabs.wordpress.com/).
 
